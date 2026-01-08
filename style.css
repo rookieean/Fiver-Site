@@ -1,42 +1,190 @@
-
-.nav-bar {
-    display: flex;
-    max-width: 105rem;
-    width: 100%;
-    height: auto;
-    gap: 1rem;
-    justify-content: center;
-    justify-content: space-between;
-
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --accent: #cbfb45; 
+    --font-primary: "Inter", sans-serif;
 }
 
-ul {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Sangat penting agar padding tidak merusak lebar */
+}
+
+body {
+    background-color: var(--white);
+    font-family: var(--font-primary);
+    overflow-x: hidden; /* Mencegah scroll horizontal saat zoom */
+}
+
+/* Navigasi */
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 2rem;
 }
 
-ul li a{
+.nav-links li a {
     text-decoration: none;
-    color: black;
-    font-size: 18px;
-    position: relative;
-    padding: 5px 10px;
-    display: flex;
-    font-family: "Inter";
+    color: var(--black);
     font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: var(--accent);
+    border-radius: 100rem;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh; /* Mengambil 80% tinggi layar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Tengah secara vertikal */
+    align-items: center;     /* Tengah secara horizontal */
+    text-align: center;
+    padding: 4rem 10%;
+}
+
+.container-center {
+    max-width: 900px; /* Membatasi lebar teks agar enak dibaca */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.tagline-pil {
+    background-color: var(--accent);
+    border-radius: 100rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+}
+
+.heading-one {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsif: mengecil di HP, membesar di Desktop */
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.hero-desc {
+    font-size: 1.125rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 button {
-    padding: 0.75rem 1.25rem;
-    background-color: black;
-    color: white;
-    border: 1px solid black;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--black);
+    color: var(--white);
+    border: 1px solid var(--black);
     border-radius: 100rem;
-    font-family: "Inter";
-    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
 }
+
+.button-two {
+    background-color: transparent;
+    color: var(--black);
+}
+
+button:hover {
+    transform: translateY(-2px); /* Efek sedikit naik saat dihover */
+    background-color: #222;
+    color: var(--accent);
+}
+
+.button-two:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Logo */
 .logo-img img {
-    width: 9.5rem;
-    margin-right: 8rem;
+    width: 120px;
+}
+.hero-section img {
+    width: 100%;
+    border-radius: 3rem;
+    margin-top: 5rem;
+}
+
+/*client logo*/
+.clients-logo {
+    width: 100%;
+    text-align: center; /* Memastikan H2 berada di tengah */
+    padding: 2rem 0;
+}
+
+.clients-logo h2 {
+    font-size: 1.25rem;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    margin-bottom: 2rem; /* Jarak ke bawah (ke arah logo) */
+    color: #666; /* Warna abu-abu halus biasanya cocok untuk section ini */
+}
+
+.logo-grid {
+    display: grid;
+    /* Membuat 6 kolom yang ukurannya sama besar */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 2rem; /* Jarak antar logo */
+    align-items: center; /* Logo tegak lurus di tengah secara vertikal */
+    max-width: 1100px;
+    margin: 0 auto; /* Memastikan container grid ada di tengah layar */
+    padding: 0 1rem;
+}
+
+.logo-grid img {
+    width: 100%;      /* Mengikuti lebar kolom grid */
+    max-width: 150px; /* Tapi jangan lebih dari 150px agar tidak pecah */
+    height: auto;     /* Menjaga rasio logo agar tidak gepeng */
+    filter: grayscale(100%); /* Opsional: membuat logo hitam putih agar elegan */
+    opacity: 0.6;
+    transition: 0.3s;
+    justify-self: center; /* Memastikan logo ada di tengah sel grid */
+}
+
+.logo-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* RESPONSIVE: Agar di HP tidak dipaksa 6 kolom (terlalu sempit) */
+@media (max-width: 768px) {
+    .logo-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom di tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+    }
 }

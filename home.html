@@ -7,25 +7,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Fiver Site</title>
+    <link rel="icon" href="images/nova.svg">
+    <title>Nova - Social Media Agency</title>
 </head>
 <body>
 
-    <!-- Navigasi Bar -->
-    <section>
-        <nav>
-            <ul>
-                <div class="logo-img">
-                    <img src="/images/nova.svg">
-                </div>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#AboutUs">About Us</a></li>
-                    <li><a href="#Services">Services</a></li>
-                    <li><a href="#Blog">Blog</a></li>
-                    <button href="GetInButton">Get In Touch</button>
+    <header class="navbar-container">
+        <nav class="nav-content">
+            <div class="logo-img">
+                <img src="/images/nova.svg" alt="Nova Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#AboutUs">About Us</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Blog">Blog</a></li>
             </ul>
+            <button class="btn-get-in">Get In Touch</button>
         </nav>
-    </section>
+    </header>
+
+    <main class="hero-section">
+        <div class="container-center">
+            <div class="tagline-pil">Welcome To Nova!</div>
+            <h1 class="heading-one">Connecting Your Brand to the World, One Click at a Time.</h1>
+            <p class="hero-desc">We're not just a social media marketing agency—we're your ticket to digital excellence and engagement growth. With a canvas as vast as the internet, your business has limitless potential to connect with its audience.</p>
+            <div class="button-group">
+                <button class="button-one">Get In Touch</button>
+                <button class="button-two">Book A Call</button>
+            </div>
+            <img src="images/hero1.jpg">
+        </div>
+
+        <section class="clients-logo">
+            <h2>Brands we work with</h2>
+            <div class="logo-grid"> <img src="images/logo-client.svg" alt="Client 1">
+                <img src="images/logo-client2.svg" alt="Client 2">
+                <img src="images/logo-client.svg" alt="Client 3">
+                <img src="images/logo-client2.svg" alt="Client 4">
+                <img src="images/logo-client.svg" alt="Client 5">
+                <img src="images/logo-client2.svg" alt="Client 6">
+            </div>
+        </section>
+    </main>
     
 </body>
 </html>
