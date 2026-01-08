@@ -1,0 +1,42 @@
+
+.nav-bar {
+    display: flex;
+    max-width: 105rem;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    justify-content: center;
+    justify-content: space-between;
+
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    display: flex;
+    font-family: "Inter";
+    font-size: 0.875rem;
+}
+
+button {
+    padding: 0.75rem 1.25rem;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 100rem;
+    font-family: "Inter";
+    font-size: 1rem;
+}
+.logo-img img {
+    width: 9.5rem;
+    margin-right: 8rem;
+}
